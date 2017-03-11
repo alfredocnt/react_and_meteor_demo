@@ -10,10 +10,10 @@ const IMAGES = [
   {title: 'Mug', link: 'https://dummyimage.com/600X400'}
 ];
 const ImageList = () => {
-  const RenderedImages = IMAGES.map(function(image){
-    // console.log(image);
-    return <ImageDetail image = {image} />
-  });
+  const RenderedImages = IMAGES.map(image =>
+    //console.log(image);
+    <ImageDetail key={image.title} image = {image} />
+  );
   return (
     <ul className = "media-list list-group">
       {RenderedImages}
