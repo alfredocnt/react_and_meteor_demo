@@ -9,8 +9,9 @@ const IMAGES = [
   {title: 'Pine Tree', link: 'https://dummyimage.com/600X400'},
   {title: 'Mug', link: 'https://dummyimage.com/600X400'}
 ];
-const ImageList = () => {
-  const RenderedImages = IMAGES.map(image =>
+const ImageList = (props) => {
+  const validImages = props.images.filter (image => !image.is_album)
+  const RenderedImages = validImages.map(image =>
     //console.log(image);
     <ImageDetail key={image.title} image = {image} />
   );
